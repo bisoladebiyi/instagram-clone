@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class="font-semibold text-3xl mb-10">Posts</h1>
+
+<div id="posts">
+  <% @posts.reverse().each do |post| %>
+    <%= render post %>
+  <% end %>
+</div>
+

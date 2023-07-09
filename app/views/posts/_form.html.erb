@@ -1,0 +1,40 @@
+<%= form_with(model: post, class: "w-1/2 mx-auto space-y-5") do |form| %>
+  <div>
+    <% invalid = post.errors.include?(:titile) %>
+    <%= form.text_field :titile, placeholder: "Title", class: "form-input" %>
+    <% if invalid %>
+      <p class="text-red-500 text-xs">
+        <%= post.errors.full_messages_for(:titile).join(", ") %>
+      </p>
+    <% end %>
+  </div>
+
+  <div>
+   <% invalid = post.errors.include?(:description) %>
+    <%= form.text_field :description, class: "form-input", placeholder: "Description" %>
+     <% if invalid %>
+      <p class="text-red-500 text-xs">
+        <%= post.errors.full_messages_for(:description).join(", ") %>
+      </p>
+    <% end %>
+  </div>
+
+  <div>
+    <% invalid = post.errors.include?(:keyword) %>
+    <%= form.text_field :keyword, class: "form-input", placeholder: "Keywords (separate with space for multiple)" %>
+     <% if invalid %>
+      <p class="text-red-500 text-xs">
+        <%= post.errors.full_messages_for(:keyword).join(", ") %>
+      </p>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label "Select media (can select multiple)", class: "inline text-sm mr-5" %>
+    <%= form.file_field :images, multiple: true, class: "text-sm" %>
+  </div> 
+
+  <div>
+    <%= form.submit "Create  Post", class: "w-full bg-blue-500 text-white p-3 rounded text-sm" %>
+  </div>
+<% end %>

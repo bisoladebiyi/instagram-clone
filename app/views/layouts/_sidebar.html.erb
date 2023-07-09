@@ -1,0 +1,14 @@
+<aside class="w-[20%] h-[100vh] border-r border-gray-300 p-7 sticky top-0 bg-white">
+    <%= link_to image_tag("https://cutewallpaper.org/24/instgram-logo-png/instagram-logo-history-meaning-symbol-png.png", class: "w-3/5 mb-10" ), root_path %>
+
+    <nav>
+    <ul class="flex flex-col space-y-7">
+            <%= link_to "Home", root_path %>
+            <%= link_to "Search", root_path %>
+            <%= link_to "Messages", root_path %>
+            <%= link_to "Create", new_post_path %>
+            <%= link_to "Profile", root_path %>
+            <%= link_to "Log Out", root_path %>
+        </ul>
+    </nav>
+</aside>

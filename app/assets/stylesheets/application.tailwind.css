@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer components {
+  .form-input {
+    @apply w-full p-3 rounded-md h-10 border-transparent border-b-gray-200 text-sm focus:outline-none;
+  }
+}
+
+

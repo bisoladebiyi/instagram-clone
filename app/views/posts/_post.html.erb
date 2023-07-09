@@ -1,0 +1,21 @@
+<%= link_to post do %>
+  <div id="<%= dom_id post %>" class="border-b border-gray-200 mb-20 w-1/2 mx-auto pb-10">
+    <% post.images.each do |image|%>
+      <%= image_tag(image, class: "object-cover w-full h-[600px] rounded-sm") %>
+    <% end %>
+    <p class="font-bold">
+      <%= post.titile %>
+      <span class="font-normal">
+        &nbsp;&nbsp;
+        <%= post.description %>
+      </span>
+    </p>
+
+    <p class="text-[#125688] text-sm">
+      <% post.keyword.split().each do |key| %>
+       #<%= key %>
+      <% end %>
+    </p>
+
+  </div>
+<% end %>
